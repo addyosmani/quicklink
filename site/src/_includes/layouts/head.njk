@@ -8,11 +8,11 @@
   {% include "layouts/favicons.njk" -%}
   {% include "layouts/social.njk" -%}
 
-  <link rel="preload" href="{{ '/assets/styles/main.css' | rev }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="{{ '/assets/styles/github-markdown.css' | rev }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="stylesheet" href="{{ '/assets/styles/main.css' | rev }}">
-  <link rel="stylesheet" href="{{ '/assets/styles/copy-snippet.css' | rev }}">
-  <link rel="stylesheet" href="{{ '/assets/styles/github-markdown.css' | rev }}">
+  <link rel="preload" href="{{ '/assets/styles/main.css' | rev }}" as="style">
+  <link rel="preload" href="{{ '/assets/styles/github-markdown.css' | rev }}" as="style">
+  <link rel="stylesheet" href="{{ '/assets/styles/main.css' | rev }}" media="print" onload="this.media='all'; this.onload=null;">
+  <link rel="stylesheet" href="{{ '/assets/styles/copy-snippet.css' | rev }}" media="print" onload="this.media='all'; this.onload=null;">
+  <link rel="stylesheet" href="{{ '/assets/styles/github-markdown.css' | rev }}" media="print" onload="this.media='all'; this.onload=null;">
   {# TODO: opt for theme and tweak the background color by avoiding github markdown #}
 
   {% set cssrelpreloadJs -%}
