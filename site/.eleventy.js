@@ -61,6 +61,10 @@ module.exports = eleventyConfig => {
     },
   ]);
 
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/clipboard/dist/clipboard.min.js': 'assets/js/vendor/clipboard.min.js',
+  });
+
   eleventyConfig.addPassthroughCopy('src/assets/images');
   eleventyConfig.addPassthroughCopy('src/assets/js');
   eleventyConfig.addPassthroughCopy('src/site.webmanifest');
