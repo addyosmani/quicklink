@@ -3,11 +3,11 @@
 {% sectionTitle "Download" %}
 <ul class="no-bullet">
   <li class="list-icon">
-    <img src="/assets/images/font-icons/download-solid.svg" alt="download" loading="lazy" width="13" height="13">
+    {% include "layouts/font-icons/download-solid.svg" %}
     <a href="https://cdnjs.cloudflare.com/ajax/libs/quicklink/{{ site.quicklinkVersion }}/quicklink.umd.js" target="_blank" rel="noopener noreferrer">Build (&lt; {{ site.quicklinkSizeLimit }} minified/gzipped)</a>
   </li>
   <li class="list-icon">
-    <img src="/assets/images/font-icons/chain-solid.svg" alt="chain" loading="lazy" width="13" height="13">
+    {% include "layouts/font-icons/chain-solid.svg" %}
     <a href="https://www.jsdelivr.com/package/npm/quicklink" target="_blank" rel="noopener noreferrer">CDN copies</a>
   </li>
 </ul>
