@@ -5,6 +5,8 @@
   <meta name="description" content="{{ description }}">
   <meta name="generator" content="{{ eleventy.generator }}">
 
+  {{ extra_head | safe }}
+
   {% include "layouts/favicons.njk" -%}
   {% include "layouts/social.njk" -%}
 
