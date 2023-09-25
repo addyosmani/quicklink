@@ -116,17 +116,18 @@ export function listen(options = {}) {
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
+      const set = hrefsInViewport.get(entry.target.href) || new Set();
+      hrefsInViewport.set(entry.target.href, set);
+
       // On enter
       if (entry.isIntersecting) {
         entry = entry.target;
         // Adding href to map of hrefsInViewport
-        hrefsInViewport.set(entry.href, hrefsInViewport.get(entry.href) || new Set());
-        hrefsInViewport.get(entry.href).add(entry);
+        set.add(entry);
 
         // Setting timeout
         setTimeoutIfDelay(() => {
           // Do not prefetch if not found in viewport
-          const set = hrefsInViewport.get(entry.href);
           if (!set || !set.size) return;
 
           observer.unobserve(entry);
@@ -161,7 +162,7 @@ export function listen(options = {}) {
       // On exit
       } else {
         entry = entry.target;
-        hrefsInViewport.get(entry.href)?.delete(entry);
+        set.delete(entry);
       }
     });
   }, {
