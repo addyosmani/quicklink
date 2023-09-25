@@ -120,13 +120,14 @@ export function listen(options = {}) {
       if (entry.isIntersecting) {
         entry = entry.target;
         // Adding href to map of hrefsInViewport
-        hrefsInViewport.set(entry.href, hrefsInViewport.get(entry.href) ?? new WeakSet());
+        hrefsInViewport.set(entry.href, hrefsInViewport.get(entry.href) || new Set());
         hrefsInViewport.get(entry.href).add(entry);
 
         // Setting timeout
         setTimeoutIfDelay(() => {
           // Do not prefetch if not found in viewport
-          if (!hrefsInViewport.get(entry.href)?.has(entry)) return;
+          const set = hrefsInViewport.get(entry.href);
+          if (!set || !set.size) return;
 
           observer.unobserve(entry);
 
