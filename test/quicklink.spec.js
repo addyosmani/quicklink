@@ -40,6 +40,7 @@ mainSuite('should prefetch in-viewport links correctly (UMD)', async context => 
   assert.ok(responseURLs.includes(`${server}/1.html`));
   assert.ok(responseURLs.includes(`${server}/2.html`));
   assert.ok(responseURLs.includes(`${server}/3.html`));
+  assert.ok(!responseURLs.includes(`${server}/4.html`));
 });
 
 mainSuite('should prefetch in-viewport links correctly (ES Modules)', async context => {
@@ -53,6 +54,7 @@ mainSuite('should prefetch in-viewport links correctly (ES Modules)', async cont
   assert.ok(responseURLs.includes(`${server}/1.html`));
   assert.ok(responseURLs.includes(`${server}/2.html`));
   assert.ok(responseURLs.includes(`${server}/3.html`));
+  assert.ok(!responseURLs.includes(`${server}/4.html`));
 });
 
 mainSuite('should prefetch in-viewport links that scroll into view correctly (UMD)', async context => {
