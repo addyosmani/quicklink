@@ -97,7 +97,7 @@ export function listen(options = {}) {
   const allowed = options.origins || [location.hostname];
   const ignores = options.ignores || [];
   const delay = options.delay || 0;
-  const hrefsInViewport = [];
+  const hrefsInViewport = new Map();
 
   const timeoutFn = options.timeoutFn || requestIdleCallback;
   const hrefFn = typeof options.hrefFn === 'function' && options.hrefFn;
@@ -119,13 +119,14 @@ export function listen(options = {}) {
       // On enter
       if (entry.isIntersecting) {
         entry = entry.target;
-        // Adding href to array of hrefsInViewport
-        hrefsInViewport.push(entry.href);
+        // Adding href to map of hrefsInViewport
+        hrefsInViewport.set(entry.href, hrefsInViewport.get(entry.href) ?? new WeakSet());
+        hrefsInViewport.get(entry.href).add(entry);
 
         // Setting timeout
         setTimeoutIfDelay(() => {
           // Do not prefetch if not found in viewport
-          if (!hrefsInViewport.includes(entry.href)) return;
+          if (!hrefsInViewport.get(entry.href)?.has(entry)) return;
 
           observer.unobserve(entry);
 
@@ -159,10 +160,7 @@ export function listen(options = {}) {
       // On exit
       } else {
         entry = entry.target;
-        const index = hrefsInViewport.indexOf(entry.href);
-        if (index > -1) {
-          hrefsInViewport.splice(index);
-        }
+        hrefsInViewport.get(entry.href)?.delete(entry);
       }
     });
   }, {
