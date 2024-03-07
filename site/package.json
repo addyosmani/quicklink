@@ -21,7 +21,7 @@
     "eleventy-sass": "^2.2.3",
     "html-minifier-terser": "^7.2.0",
     "markdown-it": "^13.0.1",
-    "postcss": "^8.4.27",
+    "postcss": "^8.4.31",
     "rimraf": "^5.0.1",
     "stylelint": "^15.10.2",
     "stylelint-config-twbs-bootstrap": "^11.0.1"
