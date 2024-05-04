@@ -48,8 +48,16 @@
     "throttles": "^1.0.1"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@babel/cli": "^7.24.8",
@@ -65,8 +73,8 @@
     "microbundle": "0.15.1",
     "npm-run-all2": "^6.2.2",
     "puppeteer": "^22.13.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sirv-cli": "^2.0.2",
     "size-limit": "^11.1.4",
     "uvu": "^0.5.6"
