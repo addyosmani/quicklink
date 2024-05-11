@@ -33,7 +33,7 @@
     "prepublishonly": "npm run build-all",
     "size": "size-limit",
     "changelog": "npm run conventional-changelog -i CHANGELOG.md -s -r 0",
-    "release": "cross-env-shell \"npm run build-all && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags\""
+    "release": "cross-env-shell \"npm run build-all && git commit -am $npm_package_version && git tag $npm_package_version && git push --follow-tags\""
   },
   "keywords": [
     "prefetch",
@@ -52,23 +52,23 @@
     "react-dom": "^16.8.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.22.10",
-    "@babel/core": "^7.22.10",
-    "@babel/preset-env": "^7.22.10",
-    "@babel/preset-react": "^7.22.5",
-    "@size-limit/file": "^8.2.6",
-    "conventional-changelog-cli": "^3.0.0",
+    "@babel/cli": "^7.24.5",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-react": "^7.24.1",
+    "@size-limit/file": "^11.1.2",
+    "conventional-changelog-cli": "^4.1.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.47.0",
+    "eslint": "^8.57.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react": "^7.34.1",
     "microbundle": "0.15.1",
-    "npm-run-all2": "^6.0.6",
-    "puppeteer": "^21.0.3",
+    "npm-run-all2": "^6.1.2",
+    "puppeteer": "^22.7.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "sirv-cli": "^2.0.2",
-    "size-limit": "^8.2.6",
+    "size-limit": "^11.1.2",
     "uvu": "^0.5.6"
   }
 }
