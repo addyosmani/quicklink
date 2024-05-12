@@ -33,7 +33,8 @@
     "prepublishonly": "npm run build-all",
     "size": "size-limit",
     "changelog": "npm run conventional-changelog -i CHANGELOG.md -s -r 0",
-    "release": "cross-env-shell \"npm run build-all && git commit -am $npm_package_version && git tag $npm_package_version && git push --follow-tags\""
+    "release": "cross-env-shell \"npm run build-all && git commit -am $npm_package_version && git tag $npm_package_version && git push --follow-tags\"",
+    "netlify": "npm ci && npm run build-all && pushd site && npm ci && npm run build && popd"
   },
   "keywords": [
     "prefetch",

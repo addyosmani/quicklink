@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/npm/v/quicklink?style=flat&logo=npm&logoColor=fff" alt="npm">
   </a>
   <a href="https://unpkg.com/quicklink">
-    <img src="https://img.badgesize.io/https://unpkg.com/quicklink/dist/quicklink.js?compression=gzip" alt="gzip size">
+    <img src="https://img.shields.io/bundlephobia/minzip/quicklink" alt="gzip size">
   </a>
   <a href="https://github.com/GoogleChromeLabs/quicklink/actions/workflows/ci.yml?query=workflow%3ACI+branch%3Amain">
     <img src="https://img.shields.io/github/actions/workflow/status/GoogleChromeLabs/quicklink/ci.yml?branch=main&label=ci&logo=github" alt="ci">
