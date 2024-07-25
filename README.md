@@ -286,10 +286,10 @@ One or many URLs to be prerendered.
 `quicklink`:
 
 - Includes a very small fallback for [requestIdleCallback](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestIdleCallback)
-- Requires `IntersectionObserver` to be supported (see [Can I Use](https://caniuse.com/intersectionobserver)). We recommend conditionally polyfilling this feature with a service like Polyfill.io:
+- Requires `IntersectionObserver` to be supported (see [Can I Use](https://caniuse.com/intersectionobserver)). We recommend conditionally polyfilling this feature with a service like polyfill-fastly.io:
 
 ```html
-<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+<script src="https://polyfill-fastly.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
 ```
 
 Alternatively, see the [Intersection Observer polyfill](https://github.com/GoogleChromeLabs/intersection-observer).
