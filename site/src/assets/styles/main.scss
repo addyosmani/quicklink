@@ -1,3 +1,6 @@
+@import "vendor/prism";
+@import "copy-snippet";
+
 html {
   height: 100%;
 }
@@ -168,7 +171,7 @@ main.page-main {
   padding-left: 0;
 }
 
-.list-icon img {
+.list-icon svg {
   margin-right: 1rem;
 }
 

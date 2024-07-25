@@ -3,11 +3,11 @@
 {% sectionTitle "Use with" %}
 <div class="center">
   <div class="flex-grid overflow-x-auto">
-    {% for framework in site.useWithFrameworks %}
+    {%- for framework in site.useWithFrameworks %}
       <a class="flex-grid__item" href="{{ framework.url }}" target="_blank" rel="noopener noreferrer">
         <img loading="lazy" src="/assets/images/logos/{{ framework.logoFileName }}" style="width: 112px; min-width: 92px" alt="{{ framework.title }}">
       </a>
-    {% endfor %}
+    {%- endfor %}
   </div>
 </div>
 {% endblock %}

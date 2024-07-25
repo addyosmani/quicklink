@@ -61,9 +61,17 @@ module.exports = eleventyConfig => {
     },
   ]);
 
-  eleventyConfig.addPassthroughCopy('src/assets/images');
-  eleventyConfig.addPassthroughCopy('src/assets/js');
-  eleventyConfig.addPassthroughCopy('src/site.webmanifest');
+  eleventyConfig.addPassthroughCopy({
+    'node_modules/clipboard/dist/clipboard.min.js': 'assets/js/vendor/clipboard.min.js',
+  });
+
+  eleventyConfig.addPassthroughCopy({
+    '../dist/quicklink.umd.js': 'assets/js/quicklink.umd.js',
+  });
+
+  eleventyConfig.addPassthroughCopy('../site/src/assets/images');
+  eleventyConfig.addPassthroughCopy('../site/src/assets/js');
+  eleventyConfig.addPassthroughCopy('../site/src/site.webmanifest');
 
   eleventyConfig.addNunjucksFilter('markdown', string => {
     const md = new markdownIt();
@@ -89,7 +97,7 @@ module.exports = eleventyConfig => {
 
   return {
     dir: {
-      input: 'src',
+      input: '../site/src',
       output: 'build',
     },
   };
