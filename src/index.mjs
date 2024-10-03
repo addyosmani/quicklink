@@ -16,7 +16,7 @@
 
 import throttle from 'throttles';
 import {priority, supported} from './prefetch.mjs';
-import requestIdleCallback from './request-idle-callback.mjs';
+import {requestIdleCallback} from './request-idle-callback.mjs';
 import {addSpeculationRules, hasSpecRulesSupport} from './prerender.mjs';
 
 // Cache of URLs we've prefetched

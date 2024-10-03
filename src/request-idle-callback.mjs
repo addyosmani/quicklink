@@ -28,4 +28,6 @@ const requestIdleCallback = window.requestIdleCallback ||
     }, 1);
   };
 
-export default requestIdleCallback;
+export {
+  requestIdleCallback,
+};
