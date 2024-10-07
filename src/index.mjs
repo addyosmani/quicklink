@@ -51,6 +51,10 @@ function isIgnored(node, filter) {
 function checkConnection(conn) {
   if (conn) {
     // Don't pre* if using 2G or if Save-Data is enabled.
+    if("onLine" in navigator && !navigator.onLine) {
+      return new Error('Device is offline');
+    }
+    
     if (conn.saveData) {
       return new Error('Save-Data is enabled');
     }
