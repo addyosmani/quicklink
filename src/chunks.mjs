@@ -15,7 +15,7 @@
  **/
 
 import throttle from 'throttles';
-import {priority, supported} from './prefetch.mjs';
+import {viaFetch, supported} from './prefetch.mjs';
 import requestIdleCallback from './request-idle-callback.mjs';
 
 // Cache of URLs we've prefetched
@@ -145,7 +145,7 @@ export function prefetch(url, isPriority) {
         // ~> so that we don't repeat broken links
         toPrefetch.add(str);
 
-        return (isPriority ? priority : supported)(
+        return (isPriority ? viaFetch : supported)(
             new URL(str, location.href).toString(),
         );
       }),
